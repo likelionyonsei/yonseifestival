@@ -1,0 +1,35 @@
+<h2>주점 업로드 하는 곳</h2>
+<%= form_tag importpub_home_index_path, multipart: true do %>
+  <%= file_field_tag :pubfile %>
+  <%= submit_tag "Import" %>
+<% end %>
+<br><br>
+
+
+
+
+<h2>공연 업로드 하는 곳</h2>
+<hr>
+<%= form_tag importperform_home_index_path, multipart: true do %>
+  <%= file_field_tag :performfile %>
+  <%= submit_tag "Import" %>
+<% end %>
+<hr>
+<br><br>
+
+<h2>부스 업로드 하는 곳</h2>
+<hr>
+<%= form_tag importbooth_home_index_path, multipart: true do %>
+  <%= file_field_tag :boothfile %>
+  <%= submit_tag "Import" %>
+<% end %>
+<hr>
+
+<% @pubs.each do |p| %>
+<%= p.id %>
+<% end %>
+<hr>
+<% @performs.each do |p| %>
+<%= p.id %>
+<% end %>
+<hr>

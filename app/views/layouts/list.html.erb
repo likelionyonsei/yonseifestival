@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+       
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">    
+        <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script> 
+        <title>대동제왜안왔어?</title>
+       
+
+          <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+          <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+          <%= csrf_meta_tags %>
+  
+          <script>(function(d,e,s){if(d.getElementById("likebtn_wjs"))return;a=d.createElement(e);m=d.getElementsByTagName(e)[0];a.async=1;a.id="likebtn_wjs";a.src=s;m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");</script>
+</head>
+
+<body id="page-top" class="index" style="background-color:white;">
+     <!--Navigation  -->
+        <div class="container">
+            <!--<div class="navbar-header page-scroll">-->
+            <!--    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">-->
+            <!--        <span class="sr-only">Toggle navigation</span>-->
+            <!--        <span class="icon-bar"></span>-->
+            <!--        <span class="icon-bar"></span>-->
+            <!--        <span class="icon-bar"></span>-->
+            <!--    </button>-->
+            <!--    <a class="navbar-brand page-scroll" href="#" id="fontcustom"><strong>대동제 왜 안 왔어?</strong></a>-->
+            <!--</div>-->
+            <!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+            <!--    <ul class="nav navbar-nav navbar-right">-->
+            <!--        <li class="hidden">-->
+            <!--            <a href="#page-top"></a>-->
+            <!--        </li>-->
+            <!--        <li>-->
+            <!--            <a class="page-scroll" href="index.html">모르는데 어떻게 가요...</a>-->
+            <!--        </li>-->
+            <!--        <li>-->
+            <!--            <a class="page-scroll" href="/publist2">주점을 왜 몰라</a>-->
+            <!--        </li>-->
+            <!--        <li>-->
+            <!--            <a class="page-scroll" href="performlist.html">공연을 왜 몰라</a>-->
+            <!--        </li>-->
+            <!--        <li>-->
+            <!--            <a href="javascript:;" data-toggle="collapse" data-target="#demo" class="page-scroll"> 이벤트를 왜 몰라</a>-->
+            <!--            <ul id="demo" class="collapse list-unstyled">-->
+            <!--                <li>-->
+            <!--                    <a href="event19.html" style="margin-left:20px;">19일 정보</a>-->
+            <!--                </li>-->
+            <!--                <li>-->
+            <!--                    <a href="event20.html" style="margin-left:20px;">20일 정보</a>-->
+            <!--                </li>-->
+            <!--            </ul>-->
+            <!--        </li>-->
+            <!--        <li>-->
+            <!--            <a class="page-scroll" href="#">우리가 만들어 놨는데</a>-->
+            <!--        </li>-->
+            <!--    </ul>-->
+            <!--</div>-->
+            
+                <!-- Navigation -->
+            <nav class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header page-scroll">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand page-scroll" href="#" id="fontcustom">대동제 왜 안왔어?</a>
+                    </div>
+        
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="hidden">
+                                <a href="#page-top"></a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="index">모르는데...</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="publist2">주점을왜몰라</a>
+                            </li>
+                            <li>
+                                <a class="page-scroll" href="performlist">공연을왜몰라</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;" data-toggle="collapse" data-target="#demo" class="page-scroll"> 이벤트를 왜 몰라</a>
+                                <ul id="demo" class="collapse list-unstyled">
+                                    <li>
+                                        <a href="event19.html" style="margin-left:20px;">19일 정보</a>
+                                    </li>
+                            <li>
+                                <a href="event20.html" style="margin-left:20px;">20일 정보</a>
+                            </li>
+                        </ul>
+                    </li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+<%= yield %>
+         </div> 
+<script>
+      var curentFile = window.location.pathname.split("/").pop();
+      if (curentFile == "") curentFile = "Default.aspx";
+      $('ul.nav > li > a[href="' + curentFile + '"]').parent().addClass('active');
+</script>
+</body>
+</html>
