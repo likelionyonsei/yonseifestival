@@ -1,0 +1,107 @@
+
+<!-- UI Object -->
+<!--<table cellspacing="0" border="1" summary="글 내용을 표시" class="tbl_type">-->
+<!--<caption>글 읽기</caption>-->
+<!--<colgroup>-->
+<!--<col width="80"><col><col width="80">-->
+<!--<col width="150"><col width="80"><col width="150">-->
+<!--</colgroup>-->
+<!--<thead>-->
+<!--<tr>-->
+<!--<th scope="row">제목</th>-->
+<!--<td colspan="5"><%= @one_post.title %></td>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+<!--<tr>-->
+<!--<th scope="row">작성자</th>-->
+<!--<td><%= @one_post.writer %></td>-->
+<!--<th scope="row">작성일</th>-->
+<!--<td><%= @one_post.created_at.strftime("%b-%d %H:%M") %></td>-->
+<!--<th scope="row">글번호</th>-->
+<!--<td><%= @one_post.id %></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td colspan="6" class="cont">-->
+<!--	<%= @one_post.content %>-->
+<!--</td>-->
+<!--</tr>-->
+<!--</tbody>-->
+<!--</table>-->
+
+<!--<form action="/home/reply_write/" method="post">-->
+<!--<fieldset>-->
+<!--<legend style="text-align:center;">댓글</legend>-->
+<!--	<table cellspacing="0" border="1" summary="글 내용에 대한 덧글 표시" class="tbl_type2">-->
+<!--	<caption>글에 대한 코멘트</caption>-->
+<!--	<colgroup>-->
+<!--	<col width="110">-->
+<!--	<col>-->
+<!--	</colgroup>-->
+<!--	<tbody>-->
+<!--	<tr class="input_txt">-->
+<!--	<td><input type="text" title="이름" name="" value="" class="name"></td>-->
+<!--	<td><textarea cols="65" rows="5" name="" class="comment"></textarea>-->
+<!--		<input type="submit" title="입력" value="입력" class="submit">-->
+<!--	</td>-->
+<!--	</tr>-->
+<!--	<tr>-->
+<!--	<td>테스트</td>-->
+<!--	<td>코멘트를 달아봅니다</td>-->
+<!--	</tr>-->
+<!--	<tr>-->
+<!--	<td>테스트</td>-->
+<!--	<td>코멘트를 달아봅니다 2 </td>-->
+<!--	</tr>-->
+<!--	</tbody>-->
+<!--	</table>-->
+<!--</fieldset>-->
+<!--</form>-->
+
+<!-- //UI Object -->
+<div id="page-wrapper">
+   <div class="panel" style="border-color:#ffc952;">
+      <div class="panel-heading" style="border-color:#ffc952; background-color:#ffc952">
+         <p style="font-size:2rem; text-align:center; color:white;"><%=@one_post.title%></p>
+      </div>
+      <div class="panel-body" style="padding-left:30px; padding-right:30px">          
+         <div>
+            글쓴이   :<%= @one_post.writer %>
+            <span class="badge" style="float:right;">
+               <%= @one_post.created_at.strftime("%b-%d %H:%M")%>
+            </span>
+                        
+         </div>
+         <div class="well">
+            <p><%= @one_post.content %></p>   
+         </div>
+      </div> 
+   </div>
+   <div class="panel" style="border-color:#ffc952;">
+        <div class="panel-heading" style="border-color:#ffc952; background-color:#ffc952"><p style="font-size:2rem; text-align:center; color:white;">댓글</p></div>
+        <div class="panel-body" style="padding-left:30px; padding-right:30px">          
+            <div class="row">
+               <div class="list-group" style="margin-top:2px;">
+                  <% @one_post.replies.each do |r| %>
+                     <div>
+                        ⊙ <%= r.content%>
+                        <span class="badge" style="float:right;">
+                                       <%=r.created_at.strftime("%b-%d %H:%M")%>
+                        </span>
+                        
+                     </div>
+                  <% end %>
+                  <form action="/home/reply_write/" method="post" style="margin-top:5px;">
+                    <input type="hidden" value="<%= @one_post.id %>" name="id_of_post">
+                  <textarea class="form-control" name="xi" rows="1"></textarea>
+                    <button type="submit" class="btn btn-default">댓글!</button>
+                  </form>
+                </div>
+                
+            </div>
+       </div> 
+       <div class="text-right">
+                    <a href="/list">리스트로 <i class="fa fa-arrow-circle-right"></i></a>
+       </div>
+   </div>
+</div>

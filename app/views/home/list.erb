@@ -1,0 +1,66 @@
+   <br>
+<% if current_user %>
+  <%= link_to "로그아웃", destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to "로그인", new_user_session_path %>
+<% end %>
+<div id="page-wrapper" style="margin-top:30px;">
+                     <div class="panel panel-yellow" style="color:#ffffff;">
+                        <div class="panel-heading" style="background-color:#ffffff; height:59px; padding-top:15px;">
+                            <a href="/list" style="color:white;"> 
+                              <h1 class="panel-title" style="float:left;">
+                                  <!--<i class="fa fa-clock-o fa-fw"></i>축제게시판</h1>-->
+                                  <a href="/list" target="_blank"><%= image_tag "festival01.svg", class:"img-responsive" %></a>
+                            </a>
+                            <!--<a href="/indec" style="color:black;">-->
+                            <!--    <h4 class="panel-title">-->
+                            <!--        <i class="fa fa-clock-o fa-fw"></i>글 쓰러가기</h4>-->
+                            <!--</a>-->
+                        </div>
+                        <div class="panel-body">
+                             <a href="/indec" style="color:black;">
+                                <p class="panel-title" >
+                                    <i class="fa fa-clock-o fa-fw"></i>글 쓰러가기</p>
+                            </a><br>
+                            <div class="list-group" style="font-weight:bold;">
+                               
+                                <% @notice_post.each do |n|%>
+                                <!--<a href="/delete/<%=n.id%>">[삭제]</a>-->
+                                <a href="/notice_view/<%= n.id%>" class="list-group-item">
+                                    <span class="badge">
+                                        <%= n.created_at.strftime("%b-%d %H:%M")%>
+                                    </span>
+                                    <div class="col-xs-4">
+                                        <p style="bold">공지</p>
+                                    </div>
+                                    <div>
+                                        <%= n.noticetitle %>
+                                    </div>
+                                </a>
+                                <% end %>
+                              
+                            </div>
+                            <div class="list-group">
+                               <% @every_post.each do |p|%>
+                               <!--<a href="/destroy/<%=p.id%>">[삭제]</a>-->
+                                <a href="/update_view/<%= p.id%>" class="list-group-item">
+                                    <span class="badge" style="float:right;">
+                                       <%=p.created_at.strftime("%b-%d %H:%M")%>
+                                    </span>
+                                    <div class="col-xs-2">
+                                       <%= p.id %>
+                                    </div>
+                                    <div >
+                                      <%= p.title %>
+                                    </div>
+                                </a>
+                                
+                                <% end%> 
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+
+</div>
+<!--<div class="col-xs-12"style="text-align:right"><a href="/notice_write">공지작성</a></div>-->

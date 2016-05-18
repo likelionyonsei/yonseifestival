@@ -178,6 +178,7 @@ ul.alert-dropdown {
 
 .panel-green > .panel-heading {
     border-color: #5cb85c;
+    
     color: #fff;
     background-color: #5cb85c;
 }
@@ -209,17 +210,21 @@ ul.alert-dropdown {
 }
 
 .panel-yellow {
-    border-color: #f0ad4e;
+    border-color: #ffffff;
 }
 
 .panel-yellow > .panel-heading {
-    border-color: #f0ad4e;
+    border-color: #ffffff;
+    border-bottom-color: #182655;
+    /*border-color: #f0ad4e; <-원래꺼*/
     color: #fff;
     background-color: #f0ad4e;
+    /*background-color: #ffffff; <-원래꺼*/
 }
 
 .panel-yellow > a {
-    color: #f0ad4e;
+    color: #ffffff;
+    /*color: #f0ad4e; <-원래꺼*/
 }
 
 .panel-yellow > a:hover {

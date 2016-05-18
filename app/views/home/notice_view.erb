@@ -1,0 +1,49 @@
+<div id="page-wrapper">
+   <div class="panel" style="border-color:#ffc952;">
+      <div class="panel-heading" style="border-color:#ffc952; background-color:#ffc952">
+         <p style="font-size:2rem; text-align:center; color:white;"><%= @one_notice.noticetitle %></p>
+      </div>
+      <div class="panel-body" style="padding-left:30px; padding-right:30px">          
+        <div>
+          <%= @one_notice.noticewriter %>
+          <span class="badge" style="float:right;">
+            <%= @one_notice.created_at.strftime("%b-%d %H:%M") %>
+          </span>
+                        
+        </div>
+        <div class="well">
+          <p><%= @one_notice.noticecontent %></p>   
+        </div>
+         
+      </div> 
+   </div>
+   <!--<div class="panel" style="border-color:#ffc952;">-->
+   <!--     <div class="panel-heading" style="border-color:#ffc952; background-color:#ffc952"><p style="font-size:2rem; text-align:center; color:white;">댓글</p></div>-->
+   <!--     <div class="panel-body" style="padding-left:30px; padding-right:30px">          -->
+   <!--         <div class="row">-->
+   <!--            <div class="list-group" style="margin-top:2px;">-->
+   <!--               <% @one_notice.noticereplies.each do |s| %>-->
+   <!--                  <div>-->
+   <!--                     ⊙ <%= s.noticecontent%><-->
+   <!--                     <span class="badge" style="float:right;">-->
+   <!--                                    <%=s.created_at.strftime("%b-%d %H:%M")%>-->
+   <!--                     </span>-->
+                        
+   <!--                  </div>-->
+   <!--               <% end %>-->
+   <!--               <form action="/home/noticereply_write/" method="post" style="margin-top:5px;">-->
+   <!--                 <input type="hidden" value="<%=@one_notice.id %>" name="id_of_post">-->
+   <!--               <textarea class="form-control" name="xi" rows="1"></textarea>-->
+   <!--                 <button type="submit" class="btn btn-default">댓글!</button>-->
+   <!--               </form>-->
+   <!--             </div>-->
+                
+   <!--         </div>-->
+   <!--    </div> -->
+   <!--    <div class="text-right">-->
+   <!--    </div>-->
+   <!--</div>-->
+   <div>
+      <a href="/list" style="float:right;"><i class="fa fa-clock-o fa-fw"></i>리스트로가기</a>
+   </div>
+</div>

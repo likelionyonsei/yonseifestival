@@ -1,6 +1,12 @@
 # 연세대학교 대동제 한눈에 보기 
 _**by 연세대학교 멋사 1팀**_           
 https://www.facebook.com/yonsei.likelion
+
+## 생각나는 해야할 것
+* css/js 파일 min으로 다 바꾸기.. 
+* 지금의 ㅇㅇ은? -> .hour
+* 주점 좋아요!
+
 ## _1. 뷰페이지_
 * **메인페이지 (index)**
    + 주점지도 : 세로정렬하기, ~~carousel~~

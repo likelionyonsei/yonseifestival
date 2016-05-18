@@ -3,81 +3,19 @@
        <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12 col-md-12">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="huge">
-                                    <div class="col-xs-12" style="float:left; padding-top:15px;">
-                                        <p style="font-size:2rem;"> 주점 지도</p> 
-                                    </div>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                            <div class="panel-body" style="padding:0px;">
-                                <div class="row">
-                                    <div class="col-xs-12" style="float:right;">
-                                        <form class="form-inline" style="margin-top:1px; margin-bottom:1px; float:right" method="POST" action="/searchdb">
-                                          <div class="form-group" style="margin-bottom:0px;">
-                                            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-                                            <div class="input-group">
-                                              <input type="text" class="form-control" name="search" placeholder="주점검색(주점 위치,이름)">
-                                              <div class="input-group-addon" style="padding:0px"><button type="submit" class="btn btn-primary"><%= image_tag "search.png" %></button></div>
-                                            </div>
-                                          </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        <div class="panel-footer" style="padding:1px;">
-                            <!--<span class="pull-left"><%= image_tag "joojum19.jpg", class:"img-responsive" %></span>-->
-                            <!--<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>-->
-                            <!--<div class="clearfix"></div>-->
-                            <div id="carousel-user" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-user" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-user" data-slide-to="1" ></li>
-        </ol>
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <%= image_tag "joojum19.jpg", class:"img-responsive", :alt=>" ", :width=>"100%" %>
-                <div class="carousel-caption">
-                </div>
-            </div>
-                                        
-            <div class="item">
-                <%= image_tag "joojum20.jpg", class:"img-responsive", :alt=>" ", :width=>"100%"%>
-                <div class="carousel-caption">
-                </div>
-            </div>
-        </div>    
-        <a class="left carousel-control" href="#carousel-user" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-left" aria-hidden="true"></span>
-            
-        </a>
-        <a class="right carousel-control" href="#carousel-user" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-right" aria-hidden="true"></span>
-        </a>
-    </div>
-                        </div>
-                        </a>
+                    <div class="panel panel-primary" style="border-color:#fff;">
+                        <%= image_tag "indexpost.png", class:"img-responsive",style:"width:100%;" %>
+                        
                     </div>
                 </div>
-                
-                
-                
+
                 <div class="col-lg-12 col-md-12">
-                    <div class="panel panel-green">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <!--<div class="col-xs-3">-->
-                                <!--    <i class="fa fa-tasks fa-5x"></i>-->
-                                <!--</div>-->
-                                <div class="col-xs-9 text-left">
-                                    <div class="huge"><p style="font-size:2rem; text-align:left">오늘의 공연</p></div>
-                                    <!--<div>New Tasks!</div>-->
-                                </div>
-                            </div>
+                    <div class="panel"style="margin-top:10px; border-color:#fffff;">
+                        <div class="panel-heading" style="border-color:#ffffff; background-color:#ffffff";>
+                            <!--<div class="huge"><p style="font-size:2rem; text-align:center; color:white;">오늘의 공연</p></div>-->
+                            <div class="huge"><%= image_tag "festival02.svg", class:"img-responsive" %></div>
+                            
+                            <!--<div>New Tasks!</div>-->
                         </div>
                         <a href="https://daehanbo-limgoodfam.c9users.io/performlist.html">
                             <div class="panel-footer">
@@ -103,108 +41,91 @@
                     </div>
                 </div>
               
-            </div>
+            <!--</div>-->
             <!-- /.row -->
 
             <!--ㄴㄴㄴ
             <!-- /.row -->
 
-            <div class="row">
+            <!--<div class="row">-->
                 
-                <div class="col-lg-6">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> 최다 추천 주점</h3>
+                <!--<div class="col-lg-6">-->
+                <!--    <div class="panel panel-yellow">-->
+                <!--        <div class="panel-heading">-->
+                <!--            <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> 최다 추천 주점</h3>-->
+                <!--        </div>-->
+                <!--        <div class="panel-body">-->
+                <!--            <div class="list-group">-->
+                <!--                <a href="/publist" class="list-group-item">-->
+                <!--                    <span class="badge">추천수:</span>-->
+                <!--                    <i class="fa fa-fw fa-calendar"></i>교육대-->
+                <!--                </a>-->
+                <!--                <a href="/publist" class="list-group-item">-->
+                <!--                    <span class="badge">추천수:</span>-->
+                <!--                    <i class="fa fa-fw fa-comment"></i> 신학과-->
+                <!--                </a>-->
+                <!--                <a href="/publist" class="list-group-item">-->
+                <!--                    <span class="badge">추천수:</span>-->
+                <!--                    <i class="fa fa-fw fa-truck"></i> 심리학과-->
+                <!--                </a>-->
+                <!--                <a href="/publist" class="list-group-item">-->
+                <!--                    <span class="badge">추천수:</span>-->
+                <!--                    <i class="fa fa-fw fa-money"></i> RYU-->
+                <!--                </a>-->
+                <!--                <a href="/publist" class="list-group-item">-->
+                <!--                    <span class="badge">추천수:</span>-->
+                <!--                    <i class="fa fa-fw fa-user"></i> 사회학과-->
+                <!--                </a>-->
+                <!--                <a href="/publist" class="list-group-item">-->
+                <!--                    <span class="badge">추천수:</span>-->
+                <!--                    <i class="fa fa-fw fa-check"></i> 노어노문-->
+                <!--                </a>-->
+                <!--                <a href="/publist" class="list-group-item">-->
+                <!--                    <span class="badge">추천수:</span>-->
+                <!--                    <i class="fa fa-fw fa-globe"></i> 영어영문-->
+                <!--                </a>-->
+                <!--                <a href="/publist" class="list-group-item">-->
+                <!--                    <span class="badge">추천수:</span>-->
+                <!--                    <i class="fa fa-fw fa-check"></i> 의과대-->
+                <!--                </a>-->
+                <!--            </div>-->
+                <!--            <div class="text-right">-->
+                <!--                <a href="/publist">모든 주점 보기 <i class="fa fa-arrow-circle-right"></i></a>-->
+                <!--            </div>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--</div>-->
+                <div class="col-lg-12 col-md-12">
+                    <!--<div class="panel panel-yellow" style="color:#ffc952;"> -->
+                    <div class="panel panel-yellow" style="color:#ffffff;">
+                        <!--<div class="panel-heading" style="background-color:#ffc952;"> -->
+                        <div class="panel-heading" style="background-color:#ffffff;">
+                            <!--<p style="font-size:2rem; text-align:center; color:white;">축제게시판. 밑에꺼 지우지마게요</p>-->
+                           <a href="/list" target="_blank"><%= image_tag "festival01.svg", class:"img-responsive" %></a>
                         </div>
                         <div class="panel-body">
                             <div class="list-group">
-                                <a href="/publist" class="list-group-item">
-                                    <span class="badge">추천수:</span>
-                                    <i class="fa fa-fw fa-calendar"></i> 교육대-학교주점
+                                <% @top_post.each do |p|%>
+                                <a href="/update_view/<%= p.id%>" class="list-group-item">
+                                    <span class="badge">
+                                       <%=p.created_at.strftime("%b-%d %H:%M")%>
+                                       </span>
+                                      <div class="col-xs-2"><%= p.id %></div>
+                                      <div>
+                                      <%= p.title %>
+                                      </div>
                                 </a>
-                                <a href="/publist" class="list-group-item">
-                                    <span class="badge">추천수:</span>
-                                    <i class="fa fa-fw fa-comment"></i> 신학과- Amen
-                                </a>
-                                <a href="/publist" class="list-group-item">
-                                    <span class="badge">추천수:</span>
-                                    <i class="fa fa-fw fa-truck"></i> 심리학과-나는 너가 술이 떙긴다는 것을 안다
-                                </a>
-                                <a href="/publist" class="list-group-item">
-                                    <span class="badge">추천수:</span>
-                                    <i class="fa fa-fw fa-money"></i> RYU-너와 나의 JOOJUM 고리
-                                </a>
-                                <a href="/publist" class="list-group-item">
-                                    <span class="badge">추천수:</span>
-                                    <i class="fa fa-fw fa-user"></i> 사회학과-뒤르켐과 소주한잔
-                                </a>
-                                <a href="/publist" class="list-group-item">
-                                    <span class="badge">추천수:</span>
-                                    <i class="fa fa-fw fa-check"></i> 노어노문-Кто не знает чужих языков, не знает о своём.
-                                </a>
-                                <a href="/publist" class="list-group-item">
-                                    <span class="badge">추천수:</span>
-                                    <i class="fa fa-fw fa-globe"></i> 영어영문-NArang Masigo Juk ja
-                                </a>
-                                <a href="/publist" class="list-group-item">
-                                    <span class="badge">추천수:</span>
-                                    <i class="fa fa-fw fa-check"></i> 의과대-값싼 마취제와 함께하는 대동제
-                                </a>
+                                 <!--위에 것들 그리드로 나눌 예정 된다면 -->
+                                <% end%> 
                             </div>
                             <div class="text-right">
-                                <a href="/publist">모든 주점 보기 <i class="fa fa-arrow-circle-right"></i></a>
+                                <a href="/list">글보러가기 <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="panel panel-yellow">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> 게시판</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <span class="badge">just now</span>
-                                    <i class="fa fa-fw fa-calendar"></i>임원석씨 잘생겼어요 ㅜㅜ 무슨 과인가요?
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <span class="badge">4 minutes ago</span>
-                                    <i class="fa fa-fw fa-comment"></i>아 이쁘다
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <span class="badge">23 minutes ago</span>
-                                    <i class="fa fa-fw fa-truck"></i>아 잘생겼다
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <span class="badge">46 minutes ago</span>
-                                    <i class="fa fa-fw fa-money"></i>멋쟁이사자처럼이 뭐하는 곳이에요?
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <span class="badge">1 hour ago</span>
-                                    <i class="fa fa-fw fa-user"></i>오 깔끔하다 
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <span class="badge">2 hours ago</span>
-                                    <i class="fa fa-fw fa-check"></i>글6
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <span class="badge">yesterday</span>
-                                    <i class="fa fa-fw fa-globe"></i>글7
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <span class="badge">two days ago</span>
-                                    <i class="fa fa-fw fa-check"></i> 글8
-                                </a>
-                            </div>
-                            <div class="text-right">
-                                <a href="#">모든 글 보기 <i class="fa fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-            </div>
+            </div>     <!--row 묶은거 -->
+            <!--</div>-->
             <!-- /.row -->
 
         </div>

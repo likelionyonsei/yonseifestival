@@ -3,6 +3,7 @@ class CreatePubreplies < ActiveRecord::Migration
     create_table :pubreplies do |t|
       t.string :content
       t.integer :pub_id
+      t.string :nickname
       t.timestamps null: false
     end
   end

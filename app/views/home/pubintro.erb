@@ -1,44 +1,35 @@
-
-<div class = "container"> 
-    <div class="panel" style="margin-top:10px; border-color:#F7CAC9;">
-        <div class="panel-heading" style="border-color:#F7CAC9; background-color:#F7CAC9">주점 소개</div>
-        <div class="panel-body">          
+<!--<div class = "container"> -->
+    <!--<div class="panel" style="margin-top:10px; border-color:#F7CAC9;"> 이게 원래 색깔!!!-->
+    
+    <div class="panel" style="margin-top:10px; border-color:#ffc952;">
+        <div class="panel-heading" style="border-color:#ffc952; background-color:#ffc952"><p style="font-size:2rem; text-align:center; color:white;">주점 소개</p> <%= @onepub.like %></div>
+        <div class="panel-body" style='vertical-align:middle'>          
             <div class="row">
                 <div class="col-md-4">    
-                    <div style="margin-left:60px;">
-                       <img src="무미니.jpg" alt="..." class="img-thumbnail" id="single_2" style="height:250px; width:180px;">
+                    <div style="margin-left:10px;">
+                     <center> <%= image_tag @onepub.imagefile, class:"img-responsive img-thumbnail", :alt=>" ", :style=>"width:330px;"%> </center>
                     </div>
                 </div>
                 <div class="col-md-8">
                     <br><br>
        <!-- LikeBtn.com BEGIN -->
-                    <span class="likebtn-wrapper" data-theme="disk" data-i18n_like="이 주점 추천해요!" data-identifier=<%=@onepub.id%> data-dislike_enabled="false" data-icon_dislike_show="false" data-i18n_after_like="추천되었어요!" data-i18n_like_tooltip="추천하기!" data-i18n_unlike_tooltip="추천취소하기ㅠㅠ"></span>
-                    <br></br>
+                    <div id="likeit" style="z-index:1; position:relative">
+                    <span class="likebtn-wrapper" data-theme="disk" data-i18n_like="이 주점 추천!" data-identifier="<%=@onepub.id%>" data-dislike_enabled="false" data-icon_dislike_show="false" data-site_id="573815d19b1d1b0e487d6e0a" data-i18n_after_like="추천되었어요!" data-i18n_like_tooltip="추천하기♥" data-i18n_unlike_tooltip="추천취소하기ㅠㅠ"></span></div><br>
                     <span class="label label-default" style="background-color:#D85956">주점이름</span> <%=@onepub.name%> <br>
-                    <span class="label label-default" style="background-color:#D85956">시간</span> <%=@onepub.time%><br>
-                    <span class="label label-default" style="background-color:#D85956">위치</span><%=@onepub.at%>번주점 <br>
-                    <span class="label label-default" style="background-color:#D85956">주점소개</span><br>
+                    <span class="label label-default" style="background-color:#D85956">시작시간</span> <%=@onepub.time_hour%>시 <%=@onepub.time_min%>분<br>
+                    <span class="label label-default" style="background-color:#D85956">주점위치</span> <%=@onepub.at%>번주점 <br>
+                    <span class="label label-default" style="background-color:#D85956">주점소개</span>
                     <%=@onepub.intro%>
                     <br>
-                    <div class = "list"> 
-                        <div class="dropdown">
-                          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                          메뉴소개
-                            <span class="caret"></span>
-                          </button>
-                          <ul class="dropdown-menu">
-                            <li><a href="#">순하리</a></li>
-                            <li><a href="#">처음처럼</a></li>
-                            <li><a href="#">자몽에이슬</a></li>
-                          </ul>
-                       </div>
-                    </div>
+                    <span class="label label-default" style="background-color:#D85956">메뉴소개</span>
+                    <%=@onepub.list%>
+                    <br>
                 </div>
             </div>
          </div>
     </div>
-    <div class="panel" style="border-color:#F7CAC9;">
-        <div class="panel-heading" style="border-color:#F7CAC9; background-color:#F7CAC9">댓글</div>
+    <div class="panel" style="border-color:#ffc952;">
+        <div class="panel-heading" style="border-color:#ffc952; background-color:#ffc952"><p style="font-size:2rem; text-align:center; color:white;">댓글</p></div>
         <div class="panel-body" style="padding-left:30px; padding-right:30px">          
             <div class="row">
                 <div class="list-group">
@@ -49,7 +40,7 @@
                     <%end%>
                     <% @onepub.pubreplies.each do |r| %>
                     <a href="#" class="list-group-item">
-                        <span class="badge">닉네임써줄거야</span>
+                        <span class="badge"><%=r.nickname%></span>
                         <i class="fa fa-fw fa-calendar"><%=r.content%></i>
                     </a>
                     <% end %>
@@ -76,19 +67,54 @@
             </div>
        </div>    
    </div>
-</div> 
+<!--</div> -->
 <!-- LikeBtn.com END -->
 
-      <script>
-          (function(d,e,s){
-              if (typeof(LikeBtn) != "undefined"){
-                LikeBtn.init();
-                }
-              if(d.getElementById("likebtn_wjs"))return;
-                  a=d.createElement(e);
-                  m=d.getElementsByTagName(e)[0];
-                  a.async=1;
-                  a.id="likebtn_wjs";
-                  a.src=s;
-                  m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");
-      </script>
+<script>
+    (function(d,e,s){
+        if (typeof(LikeBtn) != "undefined"){
+          LikeBtn.init();
+          }
+        if(d.getElementById("likebtn_wjs"))return;
+            a=d.createElement(e);
+            m=d.getElementsByTagName(e)[0];
+            a.async=1;
+            a.id="likebtn_wjs";
+            a.src=s;
+            m.parentNode.insertBefore(a, m)})(document,"script","//w.likebtn.com/js/w/widget.js");
+   setTimeout("getlike()",2000)
+</script>
+
+
+<script>
+
+   function getlike() {
+      $(window).ready(function() {
+       $(".reply_submit").click(function(){
+    like_id = <%= @onepub.id %>;
+    like_content = $(".lb-count").text();
+    $.ajax({
+      method: "POST",
+      url: "/publike",
+      data: { likenum: like_content, 
+             pub_id: like_id }
+    })
+   });
+      });
+   }
+
+   //    $(window).ready(function() {
+   //     $("#likeit").click(function(){
+   //  like_id = <%= @onepub.id %>;
+   //  like_content = $(".lb-count").text();
+   //  $.ajax({
+   //    method: "POST",
+   //    url: "/publike",
+   //    data: { likenum: like_content, 
+   //           pub_id: like_id }
+   //  })
+   // });
+   //    });
+
+
+</script>

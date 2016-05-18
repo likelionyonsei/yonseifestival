@@ -5,7 +5,8 @@ class CreateBooths < ActiveRecord::Migration
       t.text :intro
       t.text :content
       t.string :imagefile
-      t.text :time
+      t.string :time_hour
+      t.string :time_min
       t.string :at
       t.integer :day  
       t.timestamps null: false

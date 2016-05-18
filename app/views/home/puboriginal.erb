@@ -1,0 +1,209 @@
+<div id="page-wrapper">
+    <div role="tappanel">
+    <div id="tabs" class="tabs">
+    <nav>
+      <ul>
+        <li><a href="#tabs-1" data-toggle="tab">19일</a></li>
+        <li><a href="#tabs-2" data-toggle="tab">20일</a></li>
+        <li><a href="#tabs-3" data-toggle="tab">Map</a></li>
+      </ul>
+    </nav>
+    <div class="content">
+        <!--1919191919191919-->
+        <section id="tabs-1">
+            <a href="#" class="btn btn-info btn-xs" role="button">ㄱ</a>
+            <a href="#" class="btn btn-info btn-xs" role="button">ㄴ</a>
+            <a href="#" class="btn btn-info btn-xs" role="button">ㄷ</a>
+            <a href="#" class="btn btn-info btn-xs" role="button">ㄹ</a>
+            <a href="#" class="btn btn-info btn-xs" role="button">ㅁ</a>
+            <a href="#" class="btn btn-info btn-xs" role="button">ㅂ</a>
+            <a href="#" class="btn btn-info btn-xs" role="button">ㅅ</a>
+            <a href="#" class="btn btn-info btn-xs" role="button">ㅇ</a>
+            <a href="#" class="btn btn-info btn-xs" role="button">ㅈ</a>
+            <a href="#" class="btn btn-info btn-xs" role="button">ㅊ</a>
+            <a href="#" class="btn btn-info btn-xs" role="button">ㅋ</a>
+            <a href="#" class="btn btn-info btn-xs" role="button">ㅌ</a>
+            <a href="#" class="btn btn-info btn-xs" role="button">ㅍ</a>
+            <a href="#" class="btn btn-info btn-xs" role="button">ㅎ</a>
+            
+                <% @pubs19.each do |p|
+                        if p.id%3==1 %>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card">
+                        <span class="img-card">
+                        <img src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg" /></span>
+                        <div class="card-content">
+                            <h4 class="card-title">
+                                <%=p.name%>
+                            </h4>
+                            <p>
+                                주점테마
+                            </p>
+                            <p>
+                                <%=p.at%>
+                            </p>
+                        </div>
+                        <div class="card-read-more">
+                            <a href="/pubintro/<%=p.id%>"  class="btn btn-link btn-block" >주점 들리기</a>
+                        </div>
+                    </div>
+                </div>
+            <% elsif p.id%3==2 %>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card">
+                        <span class="img-card">
+                        <img src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg" /></span>
+                      </a>
+                        <div class="card-content">
+                            <h4 class="card-title">
+                                <%=p.name%>
+                            </h4>
+                            <p>
+                                주점테마
+                            </p>
+                            <p>
+                                <%=p.at%>
+                            </p>
+                        </div>
+                        <div class="card-read-more">
+                            <a href="/pubintro/<%=p.id%>"  class="btn btn-link btn-block" >주점 들리기</a>
+                        </div>
+                    </div>
+                </div>
+            <% else p.id%3 ==0 %>        
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card">
+                        <span class="img-card">
+                        <img src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg" /></span>
+                      </a>
+                        <div class="card-content">
+                            <h4 class="card-title">
+                                <%=p.name%>
+                            </h4>
+                            <p>
+                                주점테마
+                            </p>
+                            <p>
+                                <%=p.at%>
+                            </p>
+                        </div>
+                        <div class="card-read-more">
+                            <a href="/pubintro/<%=p.id%>"  class="btn btn-link btn-block" >주점 들리기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% end %>
+            <% end %>
+        </section>
+        <!--2020202020202021020202020202020202020-->
+        <section id="tabs-2">
+                <% @pubs20.each do |p|
+                        if p.id%3==1 %>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card">
+                        <span class="img-card">
+                        <img src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg" /></span>
+                        <div class="card-content">
+                            <h4 class="card-title">
+                                <%=p.name%>
+                            </h4>
+                            <p>
+                                주점테마
+                            </p>
+                            <p>
+                                <%=p.at%>
+                            </p>
+                        </div>
+                        <div class="card-read-more">
+                            <a href="/pubintro/<%=p.id%>"  class="btn btn-link btn-block" >주점 들리기</a>
+                        </div>
+                    </div>
+                </div>
+            <% elsif p.id%3==2 %>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card">
+                        <span class="img-card">
+                        <img src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg" /></span>
+                        <div class="card-content">
+                            <h4 class="card-title">
+                                <%=p.name%>
+                            </h4>
+                            <p>
+                                주점테마
+                            </p>
+                            <p>
+                                <%=p.at%>
+                            </p>
+                        </div>
+                        <div class="card-read-more">
+                            <a href="/pubintro" class="btn btn-link btn-block">
+                                주점 들리기
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            <% else p.id%3 ==0 %>        
+                <div class="col-xs-12 col-sm-4">
+                    <div class="card">
+                        <span class="img-card">
+                        <img src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg" /></span>
+                        <div class="card-content">
+                            <h4 class="card-title">
+                                <%=p.name%>
+                            </h4>
+                            <p>
+                                주점테마
+                            </p>
+                            <p>
+                                <%=p.at%>
+                            </p>
+                        </div>
+                        <div class="card-read-more">
+                            <a href="/pubintro/<%=p.id%>"  class="btn btn-link btn-block" >주점 들리기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% end %>
+            <% end %>
+        </section>
+      <!--<div id="tabs-3"></div>-->
+        <section id="tabs-3">  
+            <div id="carousel-user" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-user" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-user" data-slide-to="1" ></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                        <%= image_tag "poster.jpg", class:"img-responsive", :alt=>" ", :width=>"100%" %>
+                        <div class="carousel-caption">
+                        </div>
+                    </div>
+                                                
+                    <div class="item">
+                        <%= image_tag "poster2.jpg", class:"img-responsive", :alt=>" ", :width=>"100%"%>
+                        <div class="carousel-caption">
+                        </div>
+                    </div>
+                </div>    
+                <a class="left carousel-control" href="#carousel-user" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-left" aria-hidden="true"></span>
+                    
+                </a>
+                <a class="right carousel-control" href="#carousel-user" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-right" aria-hidden="true"></span>
+                </a>
+            </div>
+        </section>
+      </div>
+    </div>
+    </div>
+</div>
+
+<script>
+	new CBPFWTabs( document.getElementById( 'tabs' ) );
+</script>

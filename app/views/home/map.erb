@@ -1,0 +1,122 @@
+<!--지도자체 가져오기-->
+<div id="map" style="width:800px;height:600px;" class="img-responsive">
+         </div>
+            <script>
+      		var container = document.getElementById('map');
+      		var options = {
+      			center: new daum.maps.LatLng(37.5652671, 126.9323038),
+      			level: 3
+      		};
+            
+            //지도 생성
+      		var map = new daum.maps.Map(container, options);
+            
+            var positions = [
+                {
+                    title: '정문앞', 
+                    latlng: new daum.maps.LatLng(37.5609006, 126.9369731)
+                },
+                {
+                    title: '대운동장', 
+                    latlng: new daum.maps.LatLng(37.5626272, 126.9338053)
+                },
+                {
+                    title: '백주년기념관앞', 
+                    latlng: new daum.maps.LatLng(37.5620006, 126.9375731)
+                }
+            ];
+            
+            // 마커 이미지의 이미지 주소입니다
+            var imageSrc = "http://i1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
+                
+            for (var i = 0; i < positions.length; i ++) {
+                
+                // 마커 이미지의 이미지 크기 입니다
+                var imageSize = new daum.maps.Size(24, 35); 
+                
+                // 마커 이미지를 생성합니다    
+                var markerImage = new daum.maps.MarkerImage(imageSrc, imageSize); 
+                
+                // 마커를 생성합니다
+                var marker = new daum.maps.Marker({
+                    map: map, // 마커를 표시할 지도
+                    position: positions[i].latlng, // 마커를 표시할 위치
+                    title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                    image : markerImage // 마커 이미지 
+                });
+            }
+            
+            var content_1 = '<div class ="label" style="color:black"><span class="left"></span><span class="center">정문앞무대</span><span class="right"></span></div>';
+
+            // 커스텀 오버레이가 표시될 위치입니다 
+            var position_1 = new daum.maps.LatLng(37.5609006, 126.9369731);  
+            
+            // 커스텀 오버레이를 생성합니다
+            var customOverlay_1 = new daum.maps.CustomOverlay({
+                position: position_1,
+                content: content_1   
+            });
+            ////여기까지 정문앞무대
+            
+            var content_2 = '<div class ="label" style="color:black"><span class="left"></span><span class="center">대운동장무대</span><span class="right"></span></div>';
+
+            // 커스텀 오버레이가 표시될 위치입니다 
+            var position_2 = new daum.maps.LatLng(37.5626272, 126.9338053);  
+            
+            // 커스텀 오버레이를 생성합니다
+            var customOverlay_2 = new daum.maps.CustomOverlay({
+                position: position_2,
+                content: content_2   
+            });
+            /////여기까지 대운동장무대
+            
+            var content_3 = '<div class ="label" style="color:black"><span class="left"></span><span class="center">백주년기념관앞무대</span><span class="right"></span></div>';
+
+            // 커스텀 오버레이가 표시될 위치입니다 
+            var position_3 = new daum.maps.LatLng(37.5620006, 126.9375731);  
+            
+            // 커스텀 오버레이를 생성합니다
+            var customOverlay_3 = new daum.maps.CustomOverlay({
+                position: position_3,
+                content: content_3   
+            });
+            ////여기까지 백주년기념관앞무대
+         
+            // 커스텀 오버레이를 지도에 표시합니다
+            customOverlay_1.setMap(map);
+            customOverlay_2.setMap(map);
+            customOverlay_3.setMap(map);
+            </script>
+            
+            
+            
+<!--이미지지도-->
+                     <div id="staticMap" style="width:697px;height:600px;"></div>     
+                        <script>    
+         // 이미지 지도에 표시할 마커입니다
+         // 이미지 지도에 표시할 마커를 아래와 같이 배열로 넣어주면 여러개의 마커를 표시할 수 있습니다 
+         var markers = [
+             {
+                 position: new daum.maps.LatLng(37.5609006, 126.9369731),
+                 text: '정문앞무대'
+             },
+             {
+                 position: new daum.maps.LatLng(37.5626272, 126.9338053),
+                 text: '대운동장무대'
+             },
+             {
+                 position: new daum.maps.LatLng(37.5620006, 126.9375731), 
+                 text: '백주년기념관앞무대' // text 옵션을 설정하면 마커 위에 텍스트를 함께 표시할 수 있습니다     
+             }
+         ];
+         
+         var staticMapContainer  = document.getElementById('staticMap'), // 이미지 지도를 표시할 div  
+             staticMapOption = { 
+                 center: new daum.maps.LatLng(37.5627712, 126.9375223), // 이미지 지도의 중심좌표
+                 level: 4, // 이미지 지도의 확대 레벨
+                 marker: markers // 이미지 지도에 표시할 마커 
+             };    
+         
+         // 이미지 지도를 생성합니다
+         var staticMap = new daum.maps.StaticMap(staticMapContainer, staticMapOption);
+         </script>

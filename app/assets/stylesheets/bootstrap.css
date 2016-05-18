@@ -1,11 +1,13 @@
+
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
+
 html {
-  font-family: sans-serif;
+  font-family: 'Nanum Gothic', sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
@@ -4009,11 +4011,17 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   background-color: #eee;
   border-color: #337ab7;
 }
+/*.nav .nav-divider {*/
+/*  height: 1px;*/
+/*  margin: 9px 0;*/
+/*  overflow: hidden;*/
+/*  background-color: #a5dff9;*/
+/*}원래색.밑은 바꾼색*/
 .nav .nav-divider {
   height: 1px;
   margin: 9px 0;
   overflow: hidden;
-  background-color: #e5e5e5;
+  background-color: #182655;
 }
 .nav > li > a > img {
   max-width: none;
@@ -4495,9 +4503,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-right: 0;
   }
 }
+/*밑에 이거 네비바 색깔 바꾼거임!by소율*/
 .navbar-default {
-  background-color: #f8f8f8;
-  border-color: #e7e7e7;
+  background-color: #182655;
+  border-color: #182655;
 }
 .navbar-default .navbar-brand {
   color: #777;
@@ -4515,8 +4524,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
-  color: #333;
-  background-color: transparent;
+  color: #47b8e0; /* 이게 네비바 글씨 색 */
+  background-color: #e1eef6; /* 이게 네비바 배경색 */
 }
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
@@ -5473,7 +5482,7 @@ button.list-group-item-danger.active:focus {
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 20px;
   color: inherit;
 }
 .panel-title > a,
@@ -5704,22 +5713,22 @@ button.list-group-item-danger.active:focus {
   border-bottom-color: #ddd;
 }
 .panel-primary {
-  border-color: #337ab7;
+  border-color: #3073ad;
 }
 .panel-primary > .panel-heading {
   color: #fff;
-  background-color: #337ab7;
-  border-color: #337ab7;
+  background-color: #3c763d;
+  border-color: #3c763d;
 }
 .panel-primary > .panel-heading + .panel-collapse > .panel-body {
-  border-top-color: #337ab7;
+  border-top-color: #3c763d;
 }
 .panel-primary > .panel-heading .badge {
-  color: #337ab7;
+  color: #3c763d;
   background-color: #fff;
 }
 .panel-primary > .panel-footer + .panel-collapse > .panel-body {
-  border-bottom-color: #337ab7;
+  border-bottom-color: #3c763d;
 }
 .panel-success {
   border-color: #d6e9c6;
@@ -6761,7 +6770,7 @@ button.close {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 1.2rem;
   font-weight: normal;
   line-height: 1.42857143;
   text-align: center;
@@ -6776,6 +6785,8 @@ button.close {
   border: 1px solid transparent;
   border-radius: 4px;
   padding: 10px 16px;
+  margin: 4px;
+
 }
   
 .btn-lg {

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
   
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  devise_for :users
   root 'home#index'
   
   resources :home do
@@ -17,13 +19,32 @@ Rails.application.routes.draw do
   get 'index' => 'home#index'
   get 'publist' => 'home#publist'
   get 'publist2' => 'home#publist2'
+  get 'publist3' => 'home#publist3'
   get '/pubintro/:pub_id' =>'home#pubintro'
+  get '/performintro/:perform_id' =>'home#performintro'
   get 'performintro' => 'home#performintro'
   get '/event' => 'home#event'
+  get '/aboutus' => 'home#aboutus'
   post '/reply_pub' => 'home#reply_pub'
   post '/reply_perform' => 'home#reply_perform'
-  
-  
+  post '/searchdb' => 'home#searchdb'
+  get 'home/indec'
+  post '/write' => 'home#write'
+  get '/list' => 'home#list'
+  get 'destroy/:post_id' => 'home#destroy'
+  get 'update_view/:post_id' => 'home#update_view'
+  post '/siljae_update/:post_id' => 'home#siljae'
+  post 'home/reply_write'
+  get  '/indec' => 'home#indec'
+  get '/aboutus' => 'home#aboutus'
+  post '/publike' => 'home#publike'
+  post '/performlike' => 'home#performlike'
+  # get '/update_view' => 'home#update_view'
+  post '/notice' => 'home#notice'
+  get '/notice_write' => 'home#notice_write'
+  get 'delete/:notice_id' => 'home#delete'
+  get '/notice_view/:notice_id' => 'home#notice_view'
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

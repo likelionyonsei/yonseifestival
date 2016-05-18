@@ -5,21 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    
+    <link type="text/css" rel="stylesheet" href="popModal.css">
+    
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="popModal.js"></script>
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://vast-eng.github.io/jquery-popup-overlay/jquery.popupoverlay.js"></script>
       <title>대동제왜안왔어?</title>
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= stylesheet_link_tag    'application', media: 'all'%>
+      <%= javascript_include_tag 'application'%>
       <%= csrf_meta_tags %>
-  <script type="text/javascript" src="home.js"></script>
 
-  
   <!--  Top scroller  -->
-  
-  <style>
+   <style>
       div.a {
-        margin: auto;
+         margin: auto;
       }
       
       a.top {
@@ -46,87 +51,167 @@
         } );
       } );
     </script>
-    
     <!--  Top scroller end -->
-  
-
+    <!--<script>-->
+    <!--$(document).ready(function () {-->
+    <!--    $('ul.navbar-collapse > li').click(function (e) {-->
+    <!--        e.preventDefault();-->
+    <!--        $('ul.navbar-collapse > li').removeClass('active');-->
+    <!--        $(this).addClass('active');                -->
+    <!--    });            -->
+    <!--});-->
+    <!--</script>-->
+    <!-- Navbar hightlight end -->
+        <script type="text/javascript" src="//apis.daum.net/maps/maps3.js?apikey=19bae84f292cfa89983e425f1bd9a604"></script>
 </head>
-
-<body id="page-top" class="index" style="background-color:white;">
-     <!--Navigation  -->
-        <div class="container">
-            <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
-                     <!--Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header page-scroll">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand page-scroll" href="/index" id="fontcustom">대동제 왜 안왔어?</a>
-                    </div>
-                     <!--Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="hidden"><a href="#page-top"></a></li>
-                            <li><a class="page-scroll" href="/index">모르는데어떻게가요</a></li>
-                            <li><a class="page-scroll" href="/publist">주점을왜몰라</a></li>
-                            <li><a class="page-scroll" href="/performlist">공연을왜몰라</a></li>
-                            <li><a class="page-scroll" href="/event">이벤트를 왜몰라</a></li>
-                        </ul>
-                    </div>
-                     <!--/.navbar-collapse -->
-                </div>
-                 <!--/.container-fluid -->
-            </nav>
-            
-            
-            
-            <div class="a" style="z-index:1; position:absolute;">
-                <a href="#" class="top"><%= image_tag "toparrow.png", class:"img-responsive", style:"width:40%; float:right"  %></a>
-            </div>
-            
-            
-            
-            <%= yield %>
-          	<footer class="footer-distributed" style="margin-top:0px">
-             <!--<div class="container">-->
-          	
-    			<div class="footer-right" style="position:relative; bottom:0px;">
-    
-    				<a href="http://yonsei.likelion.net" target="_blank"><%= image_tag "연세대학교.png", class:"img-responsive", style:"width:100%;"  %></a>
-    		
-    
-    			</div>
-            
-    			<div class="footer-left" style="position:relative; bottom:0px;">
-               <br><br>
-    				<p class="footer-links">
-    					<a href="/index">Home</a>
-    					·
-    					<a href="#">About Us</a>
-    					·
-    					<a href="#">Contact</a>
-    				</p>
-    
-    				<p style="color:#4D4F52">멋쟁이 사자처럼 at 연세대학교 &copy; 2016</p>
-    			</div>
+<body id="page-top" class="index" style="background-color:white">
+   <div class="container">
+      <!--Navigation -->   
+         <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+             <div class="container">
+                  <!--Brand and toggle get grouped for better mobile display -->
+                 <div class="navbar-header page-scroll">
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                         <span class="sr-only">Toggle navigation</span>
+                         <span class="icon-bar"></span>
+                         <span class="icon-bar"></span> 
+                         <span class="icon-bar"></span>
+                     </button>
+                     <a class="navbar-brand page-scroll" href="/index" id="fontcustom"><%= image_tag "why.svg", class:"img-responsive", style:"width:100%;"%></a>
+                     <!--<a class="navbar-brand page-scroll" href="/index" id="fontcustom" style="color:#34314c;">  대동제 왜 안왔어?</a>-->
+                 </div>
+                  <!--Collect the nav links, forms, and other content for toggling -->
+                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                     <ul class="nav nav-pills navbar-nav navbar-right">
+                         <li class="hidden"><a href="#page-top"></a></li>
+                         <li><a class="page-scroll" href="/index"style="font-weight:bold;">모르는데 어떻게 가요</a></li>
+                         <li><a class="page-scroll" href="/publist"style="font-weight:bold;">주점을 왜 몰라</a></li>
+                         <!--<li><a class="page-scroll" href="/publist2">주점 연습장</a></li>-->
+                         <li><a class="page-scroll" href="/performlist" style="font-weight:bold;">공연을 왜 몰라</a></li>
+                         <li><a class="page-scroll" href="/event" style="font-weight:bold;">이벤트를 왜 몰라</a></li>
+                         <li><a class="page-scroll" href="/list" style="font-weight:bold;">축제게시판</a></li>
+                         <li><a class="page-scroll" href="/aboutus" style="font-weight:bold;">우리가만들었는데왜몰라</a></li>
+                     </ul>
+                 </div>
+                  <!--/.navbar-collapse -->
+             </div>
+              <!--/.container-fluid -->
+         </div>
    
-          <!--</div>-->
-		</footer>
-         
+      <div class="a" style="z-index:1; position:absolute;">
+          <a href="#" class="top"><%= image_tag "toparrow.png", class:"img-responsive", style:"width:40%; float:right"  %></a>
+      </div>
+     
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+
+      <%= yield %>
+        </div>
+      
+   </div>
 </body>
+
+    	<footer class="footer-distributed" style="margin-top:0px">
+    		<div class="footer-right" style="position:relative; bottom:0px; z-index:1">
+    			<a href="https://yonsei.likelion.net" target="_blank"><%= image_tag "연세대학교.png", class:"img-responsive", style:"width:100%;"%></a>
+    		</div>
+         
+    		<div class="footer-left" style="position:relative; bottom:0px;">
+            <br><br>
+    			<p class="footer-links">
+    				<a href="https://daehanbo-limgoodfam.c9users.io/aboutus">About Us</a>
+    				·
+    				 <a data-popup-open="popup-1" href="#">Contact Us</a>
+ 
+                  <div class="popup" data-popup="popup-1">
+                      <div class="popup-inner">
+                          Facebook : facebook.com/yonsei.likelion <br>
+                          E-mail : likelionyonsei@gmail.com 
+                          <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+                      </div>
+                  </div>
+    				 
+    				 <style>
+               /* Outer */
+               .popup {
+                   width:100%;
+                   height:100%;
+                   display:none;
+                   position:fixed;
+                   top:0px;
+                   left:0px;
+                   background:rgba(0,0,0,0.75);
+               }
+                
+               /* Inner */
+               .popup-inner {
+                   max-width:700px;
+                   width:90%;
+                   padding:40px;
+                   position:absolute;
+                   top:50%;
+                   left:50%;
+                   -webkit-transform:translate(-50%, -50%);
+                   transform:translate(-50%, -50%);
+                   box-shadow:0px 2px 6px rgba(0,0,0,1);
+                   border-radius:3px;
+                   background:#fff;
+               }
+                
+               /* Close Button */
+               .popup-close {
+                   width:30px;
+                   height:30px;
+                   padding-top:4px;
+                   display:inline-block;
+                   position:absolute;
+                   top:0px;
+                   right:0px;
+                   transition:ease 0.25s all;
+                   -webkit-transform:translate(50%, -50%);
+                   transform:translate(50%, -50%);
+                   border-radius:1000px;
+                   background:rgba(0,0,0,0.8);
+                   font-family:Arial, Sans-Serif;
+                   font-size:20px;
+                   text-align:center;
+                   line-height:100%;
+                   color:#fff;
+               }
+                
+               .popup-close:hover {
+                   -webkit-transform:translate(50%, -50%) rotate(180deg);
+                   transform:translate(50%, -50%) rotate(180deg);
+                   background:rgba(0,0,0,1);
+                   text-decoration:none;
+               }
+               </style>
+               
+               <script>
+               $(function() {
+                   //----- OPEN
+                   $('[data-popup-open]').on('click', function(e)  {
+                       var targeted_popup_class = jQuery(this).attr('data-popup-open');
+                       $('[data-popup="' + targeted_popup_class + '"]').fadeIn(350);
+                
+                       e.preventDefault();
+                   });
+                
+                   //----- CLOSE
+                   $('[data-popup-close]').on('click', function(e)  {
+                       var targeted_popup_class = jQuery(this).attr('data-popup-close');
+                       $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
+                
+                       e.preventDefault();
+                   });
+               });
+               </script>
+    			</p>
+   
+    			<p style="color:#4D4F52">멋쟁이 사자처럼 at 연세대학교 1팀 &copy; 2016</p>
+    		</div>
+      </footer>
 </html>
 
 
-<script>
-
-    $(document).ready(function(){
-        
-        
-    });
-
-
-</script>
+ 
