@@ -9,22 +9,22 @@ class HomeController < ApplicationController
   
   def index
     @top_post = Post.last(8).reverse
-    now_hour = Time.now.hour
-    now_min = Time.now.min
-    now_convert = (60*(now_hour-13)+now_min)/25
-    now_day = Time.now.day
+  #  now_hour = Time.now.hour
+  #  now_min = Time.now.min
+  #  now_convert = (60*(now_hour-13)+now_min)/25
+  #  now_day = Time.now.day
     
-    if now_day == 19
-       performs19 = Perform.where('day==19').select(:name, :at, :id, :time_hour, :time_min)
-       @performnow0 = perform19.where({at:'0'}).select(:name, :at, :id, :time_hour, :time_min)[now_convert]
-       @performnow1 = perform19.where({at:'1'}).select(:name, :at, :id, :time_hour, :time_min)[now_convert]
-       @performnow2 = perform19.where({at:'2'}).select(:name, :at, :id, :time_hour, :time_min)[now_convert]
-    else
-       performs20 = Perform.where('day==20').select(:name, :at, :id, :time_hour, :time_min)
+   # if now_day == 19
+     #  performs19 = Perform.where('day==19').select(:name, :at, :id, :time_hour, :time_min)
+     #  @performnow0 = perform19.where({at:'0'}).select(:name, :at, :id, :time_hour, :time_min)[now_convert]
+     #  @performnow1 = perform19.where({at:'1'}).select(:name, :at, :id, :time_hour, :time_min)[now_convert]
+     #  @performnow2 = perform19.where({at:'2'}).select(:name, :at, :id, :time_hour, :time_min)[now_convert]
+   # else
+      # performs20 = Perform.where('day==20').select(:name, :at, :id, :time_hour, :time_min)
       # @performnow0 = perform20.where({at:'0'}).select(:name, :at, :id, :time_hour, :time_min)[now_convert]
       # @performnow1 = perform20.where({at:'1'}).select(:name, :at, :id, :time_hour, :time_min)[now_convert]
       # @performnow2 = perform20.where({at:'2'}).select(:name, :at, :id, :time_hour, :time_min)[now_convert]      
-    end
+    #end
 
     
   end 
